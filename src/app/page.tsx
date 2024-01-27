@@ -2,7 +2,6 @@
 
 import ExploreCollections from "@/components/ExploreCollections";
 import Hero from "@/components/Hero";
-import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 
 export default function Home() {
   return (
@@ -11,7 +10,6 @@ export default function Home() {
       <Hero/>
       <ExploreCollections/>
       </div>
-
     </div>
   );
 }

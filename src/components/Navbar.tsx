@@ -7,61 +7,56 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
 import { Button } from "./ui/button";
+
+
 export default function Navbar() {
+  const links = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "Men",
+      href: "/Men",
+    },
+    {
+      name: "Women",
+      href: "/Women",
+    },
+    {
+      name: "Kids",
+      href: "/Kids",
+    }
+  ]
   const pathname = usePathname();
   return (
     <div className="backdrop-blur-md fixed w-full z-10">
       <MaxWidthWrapper>
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <h1 className={cn("text-3xl font-medium leading-tight", montserrat.className)}>
+            <h1 className={cn("text-xl sm:text:2xl md:text-3xl font-medium leading-tight", montserrat.className)}>
               Dope Kicks
             </h1>
           </Link>
-          <ul className="flex gap-4">
-            <li>
+          
+          <div className="hidden md:flex gap-6 " > 
+          {links.map((link)=>{
+            return (
               <Link
+                key={link.name}
                 className={`link ${
-                  pathname === "/" ? "active text-green-900" : ""
+                  pathname === link.href ? "active text-green-900" : ""
                 }`}
-                href="/"
+                href={link.href}
               >
-                Home
+                {link.name}
               </Link>
-            </li>
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/men" ? "active text-gray-500" : ""
-                }`}
-                href="/men"
-              >
-                Men
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/women" ? "active text-gray-500" : ""
-                }`}
-                href="/women"
-              >
-                Women
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/kids" ? "active text-gray-500" : ""
-                }`}
-                href="/kids"
-              >
-                Kids
-              </Link>
-            </li>
-          </ul>
+            )
+          })}
+          </div>
+      
          
-            <Button variant="default" className="gap-2 px-6 rounded-2xl">
+            <Button variant="default" className="gap-2 md:px-6 md:mx-9 rounded-xl">
               {" "}
               <ShoppingBag /> Cart
             </Button>
