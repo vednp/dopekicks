@@ -18,9 +18,9 @@ const PaymentButton = ({ amount }: { amount: number }) => {
     setIsLoading(true);
 
     // make an endpoint to get this key
-    const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY;
+    const key ='rzp_test_1j2hAKQkz4Hlxw';
     const data = await fetch("/api/razorpay?amount=" + amount);
-    const { order } = await data?.json();
+    const { order } = await data.json();
     const options = {
       key: key,
       name: "John Doe",
