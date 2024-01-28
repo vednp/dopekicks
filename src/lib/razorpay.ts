@@ -14,7 +14,7 @@ export const makePayment = async () => {
   }).then((t) => t.json());
 
   var options = {
-    key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
+    key:'rzp_test_1j2hAKQkz4Hlxw',
     name: "Dope Kicks",
     currency: data.currency,
     amount: data.amount,
