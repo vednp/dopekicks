@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@sanity/image-url": "^1.0.2",
     "class-variance-authority": "^0.7.0",
@@ -22,9 +24,11 @@
     "razorpay": "^2.9.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-use-cart": "^1.13.0",
+    "shortid": "^2.2.16",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "use-shopping-cart": "^3.2.0"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

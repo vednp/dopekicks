@@ -16,9 +16,9 @@ export default function Hero() {
     <div>
       <div className="flex relative">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 3 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           className="absolute flex flex-col top-44 left-16  "
         >
           <p
@@ -29,11 +29,11 @@ export default function Hero() {
           >
             Nike Air Zoom Pegasus 36
           </p>
-          <Button variant="ghost" size="sm" className="mt-2 dark" asChild>
-            <Link href="/">
-              Buy Now <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+        <Button variant="ghost" size="sm" className="mt-2 dark" asChild>
+          <Link href="/">
+            Buy Now <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
         </motion.div>
 
         <Image
