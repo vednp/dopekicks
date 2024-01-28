@@ -16,7 +16,7 @@ import { useContext } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 export default function Card(product: cardProductInterface) {
-  const { name, imageUrl, price, categoryName, slug, _id } = product;
+  const { name, imageUrl, price, categoryName, slug, _id } = product as cardProductInterface;
   const { addToCart } = useContext(CartContext);
   const { toast } = useToast();
 
@@ -61,7 +61,7 @@ export default function Card(product: cardProductInterface) {
               <TooltipTrigger>
                 <ShoppingBagIcon
                   onClick={() => {
-                    addToCart(product)
+                    addToCart({...product, quantity: 1} as cartProduct);
                     toast({
                       title: "Added to cart",
                       description: "Item successfully added to cart",

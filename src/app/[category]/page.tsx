@@ -20,7 +20,7 @@ const getData = async (category: { category: string }) => {
 };
 
 export default async function page({ params }: any) {
-  const data: cardProductInterface = await getData(params.category);
+  const data: cardProductInterface[] = await getData(params.category);
   return (
     <div className="pb-20 pt-9 bg-[#d7d7d7]">
       <MaxWidthWrapper>

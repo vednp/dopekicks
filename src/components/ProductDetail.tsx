@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { ShoppingBagIcon, Star, Truck } from "lucide-react";
-import { productDetails } from '@/app/interface'
+import { productDetails, cartProduct } from '@/app/interface'
 import Image from 'next/image'
 import { Button } from './ui/button'
 import PaymentButton from './MakePaymentComponent';
@@ -9,7 +9,8 @@ import { CartContext } from "@/context/cart";
 import { useContext } from "react";
 import { useToast } from "@/components/ui/use-toast";
 export default function ProductDetail(data : productDetails) {
-    const { description, imageUrl, name, price, categoryName, _id } = data[0];
+
+    const { description, imageUrl, name, price, categoryName, _id } = data[0] ;
     const { addToCart } = useContext(CartContext);
     const { toast } = useToast();
   return (
@@ -63,7 +64,7 @@ export default function ProductDetail(data : productDetails) {
             
             <PaymentButton amount={price}/>
             <Button variant="ghost" size="lg" onClick={() => {
-                    addToCart(data[0]);
+                    addToCart( data[0] );
                     toast({
                       title: "Added to cart",
                       description: "Item successfully added to cart",

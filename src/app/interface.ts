@@ -16,6 +16,8 @@ export interface productDetails {
     price: number;
     categoryName: string;
     _id: string;
+    slug: string;
+    quantity: number;
   };
 }
 
