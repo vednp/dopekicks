@@ -3,8 +3,8 @@ import Razorpay from "razorpay";
 import { v4 as uuid } from "uuid";
 
 const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY!,
-  key_secret: process.env.RAZORPAY_SECRET,
+  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY!,
+  key_secret: process.env.NEXT_PUBLIC_RAZORPAY_SECRET,
 });
 
 async function calculate(cartTotal: number): Promise<number> {

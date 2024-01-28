@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'dope kicks',
 
-  projectId: process.env.PROJECT_ID!,
+  projectId:"390nkfdk",
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
