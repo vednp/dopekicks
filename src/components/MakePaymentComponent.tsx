@@ -3,6 +3,7 @@ import React, { Suspense, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 declare global {
   interface Window {
@@ -63,6 +64,7 @@ const PaymentButton = ({ amount }: { amount: number }) => {
           Pay Now
         </Button>
       </div>
+      <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
     </>
   );
 };
