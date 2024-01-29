@@ -95,7 +95,7 @@ export default function ProductDetail(data: productDetails) {
                 variant="ghost"
                 size="lg"
                 onClick={() => {
-                  addToCart(data[0] as cartProduct);
+                  addToCart(data as cartProduct);
 
                   toast({
                     title: "Added to cart",
