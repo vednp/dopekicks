@@ -15,7 +15,7 @@ async function getData(slug: string) {
 
   const data = await client.fetch(query);
 
-  return data;
+  return data[0];
 }
 
 export default async function ProductPge({

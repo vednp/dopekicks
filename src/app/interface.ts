@@ -9,20 +9,19 @@ export interface cardProductInterface {
 }
 
 export interface productDetails {
-  0: {
-    description: string;
-    imageUrl: string;
-    name: string;
-    price: number;
-    categoryName: string;
-    _id: string;
-    slug: string;
-    quantity: number;
-  };
+  description: string;
+  imageUrl: string;
+  name: string;
+  price: number;
+  categoryName: string;
+  _id: string;
+  slug: string;
+  quantity: number;
 }
 
 export interface cartProduct {
   categoryName: string;
+  description: string;
   imageUrl: string;
   name: string;
   price: number;
