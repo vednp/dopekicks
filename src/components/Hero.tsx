@@ -30,7 +30,7 @@ export default function Hero() {
             Nike Air Zoom Pegasus 36
           </p>
         <Button variant="ghost" size="sm" className="mt-2 dark" asChild>
-          <Link href="/">
+          <Link href="/product/Nike-Air-Zoom-Pegasus-36">
             Buy Now <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

@@ -8,7 +8,7 @@ import { client } from '@/app/lib/sanity'
 import { cardProductInterface } from '@/app/interface'
 
 const getData = async () =>{
-  const query = `*[_type == "product"][0...6]   {
+  const query = `*[_type == "product" && _id != '30d56374-3997-4f6b-90a7-3fd4870ead1b'][0...6] | order(_createdAt asc) {
     _id,
     price,
     name,
@@ -16,7 +16,7 @@ const getData = async () =>{
   "categoryName": category->name,
   "imageUrl": image.asset->url
   }`
-const data = await client.fetch(query,{ next: { revalidate: 432000 } }); // 5 Days revalidation time 
+const data = await client.fetch(query,{ next: { revalidate: 86400 } }); 
 return data
 }
 
