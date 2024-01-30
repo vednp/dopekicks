@@ -33,7 +33,7 @@ Welcome to DopeKicks, your go-to destination for premium and unique shoe collect
 
    - Create a [Stripe](https://stripe.com/) account.
    - Obtain your API keys.
-   - Add created API key in .env file at root of the project.
+   - Create .env file at root of the project and add generated API key in it.
 
 5. Run the application:
 
