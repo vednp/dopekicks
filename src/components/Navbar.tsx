@@ -2,7 +2,7 @@
 import React from "react";
 import { MaxWidthWrapper } from "./MaxWidthWrapper";
 import Link from "next/link";
-import { montserrat } from "../app/fonts";
+import { montserrat, orbitron } from "../app/fonts";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
@@ -42,12 +42,12 @@ export default function Navbar() {
   return (
     <div className="backdrop-blur-md fixed w-full z-10">
       <MaxWidthWrapper>
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between mt-2 h-16">
           <Link href="/">
             <h1
               className={cn(
-                "text-xl sm:text:2xl md:text-3xl font-medium leading-tight",
-                montserrat.className
+                "text-xl sm:text:2xl md:text-3xl font-normal leading-tight",
+                orbitron.className
               )}
             >
               Dope Kicks
@@ -73,7 +73,7 @@ export default function Navbar() {
               <div>
               <Button
                 variant="default"
-                className="gap-2 md:px-6 md:mx-9 rounded-xl"
+                className="gap-2 md:px-6 md:mx-8 shadow-gray-900 shadow-md rounded-md"
               >
                 {" "}
                 <ShoppingBag /> Cart
