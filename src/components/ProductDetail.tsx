@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { ShoppingBagIcon, Star, Truck } from "lucide-react";
+import React, { useState } from "react";
+import { Loader2, ShoppingBagIcon, Star, Truck } from "lucide-react";
 import { productDetails, cartProduct } from "@/app/interface";
 import Image from "next/image";
 import { Button } from "./ui/button";
@@ -27,6 +27,7 @@ const handlePayment = async ( product : productDetails ) => {
 export default function ProductDetail(data: productDetails) {
   const { description, imageUrl, name, price, categoryName, _id } = data as productDetails;
   const { addToCart } = useContext(CartContext);
+  const [disabled, setDisabled] = useState<boolean>(false);
   const { toast } = useToast();
   return (
     <div className="bg-white pt-24 min-h-screen ">
@@ -83,13 +84,21 @@ export default function ProductDetail(data: productDetails) {
 
             <div className="flex gap-2.5">
               <Button
+                disabled={disabled}
+                id="payNowButton"
                 variant="default"
                 onClick={(e) =>{
                   e.preventDefault()
-               handlePayment(data)}
-              }  
+                  setDisabled(true)
+                  handlePayment(data)}
+                }  
                 size="lg"
-              >Pay Now</Button>
+              >
+                {
+                  disabled ? <Loader2 className="w-14 h-4 animate-spin"/>: "Buy Now"
+                }
+              
+              </Button>
               
               <Button
                 variant="ghost"

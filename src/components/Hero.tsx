@@ -23,14 +23,14 @@ export default function Hero() {
         >
           <p
             className={cn(
-              "text-3xl font-light tracking-tight",
+              "text-3xl font-normal tracking-tight",
               montserrat.className
             )}
           >
             Nike Air Zoom Pegasus 36
           </p>
-        <Button variant="ghost" size="sm" className="mt-2 dark" asChild>
-          <Link href="/product/Nike-Air-Zoom-Pegasus-36">
+        <Button variant="link" size="sm" className="mt-2 text-black" asChild>
+          <Link href="/product/Nike-Air-Zoom-Pegasus-36" className="animate-pulse text-lg">
             Buy Now <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
